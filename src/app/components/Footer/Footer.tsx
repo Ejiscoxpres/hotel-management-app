@@ -31,15 +31,15 @@ const Footer = () => {
               </div>
     
               <div className='flex-1 md:text-right'>
-                <p className='pb-4'>Our Story</p>
+                <p className='pb-4'>Our News</p>
                 <p className='pb-4'>Get in Touch</p>
-                <p className='pb-4'>Our Privacy Commitment</p>
-                <p className='pb-4'>Terms of service</p>
+                <p className='pb-4'>Our Privacy Policy</p>
+                <p className='pb-4'>Terms & Condition of service</p>
                 <p>Customer Assistance</p>
               </div>
     
               <div className='flex-1 md:text-right'>
-                <p className='pb-4'>Dining Experience</p>
+                <p className='pb-4'>Experience Luxury Dining </p>
                 <p className='pb-4'>Wellness</p>
                 <p className='pb-4'>Fitness</p>
                 <p className='pb-4'>Sports</p>
