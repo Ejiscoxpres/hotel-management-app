@@ -1,9 +1,41 @@
+'use client';
+
+import { ChangeEvent, FormEvent, useState } from "react";
 import { AiFillGithub } from "react-icons/ai"
 import { FcGoogle } from "react-icons/fc"
 
+const defaultFormData = {
+  email: '',
+  name: '',
+  password: '',
+};
+
 const Auth = () => {
+
+  const [formData, setFormData] = useState(defaultFormData);
+
   const inputStyles =
     'border border-gray-300 sm:text-sm text-black rounded-lg block w-full p-2.5 focus:outline-none';
+
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = event.target;
+      setFormData({ ...formData, [name]: value });
+    };
+
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    try {
+      console.log(formData);
+      
+    } catch(error) {
+      console.log(error);
+    } finally{
+      setFormData(defaultFormData);
+    }
+  };
+
 
   return (
     <section className="container mx-auto">
@@ -26,13 +58,15 @@ const Auth = () => {
           </span>
          </div>
             
-         <form className='space-y-4 md:space-y-6' >
+         <form className='space-y-4 md:space-y-6'   onSubmit={handleSubmit}>
          <input
             type='email'
             name='email'
             placeholder='name@githotelz.com'
             required
             className={inputStyles}
+            value={formData.email}
+            onChange={handleInputChange}
             />
             <input
             type='text'
@@ -40,6 +74,8 @@ const Auth = () => {
             placeholder='Steven Zeddy'
             required
             className={inputStyles}
+            value={formData.name}
+            onChange={handleInputChange}
             
           />
           <input
@@ -49,10 +85,21 @@ const Auth = () => {
             required
             minLength={6}
             className={inputStyles}
+            value={formData.password}
+            onChange={handleInputChange}
             
           />
+           <button
+            type='submit'
+            className='w-full bg-tertiary-dark focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center'
+          >
+            Sign Up
+          </button>
 
          </form>
+         <button  className='text-blue-700 underline'>
+          login
+        </button>
         </div>
         </section>
   )
