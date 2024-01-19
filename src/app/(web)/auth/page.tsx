@@ -1,12 +1,13 @@
 'use client';
 
-import React from "react";
+import React, { useEffect } from "react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
 import { AiFillGithub } from "react-icons/ai"
 import { FcGoogle } from "react-icons/fc"
 import { signUp } from 'next-auth-sanity/client';
 import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from "next/navigation";
 
 const defaultFormData = {
   email: '',
@@ -27,12 +28,17 @@ const Auth = () => {
     };
 
     const { data: session } = useSession();
-    console.log(session);
+    const router = useRouter();
+
+    useEffect(() => {
+      if (session) router.push('/');
+    }, [router, session]);
+  
 
     const loginHandler = async () => {
       try {
         await signIn();
-        // push the user to the home page.
+        router.push('/');
       } catch (error) {
         console.log(error);
         toast.error("Something wen't wrong");

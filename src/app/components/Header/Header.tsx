@@ -6,10 +6,14 @@ import { FaUserCircle } from 'react-icons/fa';
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 import ThemeContext from "../../../context/themeContext"
 import React from "react";
+import { useSession } from "next-auth/react";
 
 
 const Header = () => {
     const {darkTheme, setDarkTheme} =useContext(ThemeContext)
+
+    const { data: session } = useSession();
+  
 
   return (
     <header className="py-10 px-4 container mx-auto text-xl flex flex-wrap md:flex-nowrap items-center justify-between"> 
