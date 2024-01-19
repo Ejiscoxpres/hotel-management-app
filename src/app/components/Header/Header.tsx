@@ -21,7 +21,7 @@ const Header = () => {
 
     <div className="flex items-center w-full md:2/3">
     <Link href='/' className="font-black text-tertiary-dark">
-        GIT HOTELZ
+        UTMOST HOTELZ
     </Link>
     <ul className="flex items-center ml-5">
 
