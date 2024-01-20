@@ -15,7 +15,7 @@ variable:'--font-poppins',
  })
 
 export const metadata: Metadata = {
-  title: 'Ejisco Hotel App',
+  title: 'Utmost Hotel App',
   description: 'Discover the best hotel rooms',
 }
 
