@@ -1,4 +1,4 @@
-import { Room } from "../app/models/room";
+import { Room } from "../models/room";
 import sanityClient from "./sanity";
 
 import * as queries from './sanityQueries';
@@ -10,4 +10,9 @@ export async function getFeaturedRoom() {
         { cache: 'no-cache' }
         );
         return result;
+}
+
+export async function getRooms() {
+    const result = await sanityClient.fetch<Room[]>(queries.getRoomsQuery);
+    return result;
 }
