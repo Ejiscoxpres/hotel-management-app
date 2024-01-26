@@ -1,7 +1,7 @@
 import { defineField } from "sanity";
 
 const booking ={
-    name: 'booking',
+  name: 'booking',
   title: 'Booking',
   type: 'document',
   fields: [
