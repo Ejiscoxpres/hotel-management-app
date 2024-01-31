@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import useSWR from "swr";
 import { getRooms } from "../../../libs/api";
 import { Room } from "../../../models/room";
-import Search from "../../components/Search/Search";
-import RoomCard from "../../components/RoomCard/RoomCard";
+import Search from "../../../components/Search/Search";
+import RoomCard from "../../../components/RoomCard/RoomCard";
 
 const Rooms = () => {
 
